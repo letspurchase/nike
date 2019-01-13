@@ -1,6 +1,7 @@
 const Libs = require('./libs')
 async function test(url) {
   let wwwCookies = await Libs.UrlCookie.getUrlCookie(url)
+  // wwwCookies = wwwCookies.map(i => i.split(';')[0]).join(';')
   // let uniteCookie = await Libs.UrlCookie.getUrlCookie('https://unite.nike.com', {cookie: wwwCookies})
   let res = await Libs.UrlCookie.post('https://unite.nike.com/login', {
     query: {
