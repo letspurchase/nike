@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/letspurchase/nike#readme",
   "dependencies": {
-    "superagent": "^4.1.0"
+    "axios": "^0.18.0",
+    "phantomjs-prebuilt": "^2.1.16",
+    "superagent": "^4.1.0",
+    "tough-cookie": "^3.0.0"
   }
 }

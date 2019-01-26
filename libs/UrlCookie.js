@@ -26,14 +26,20 @@ module.exports = {
       })
     })
   },
-  getUrlCookie (url, config = {}) {
+  getUrlCookie (method, url, config = {}) {
     return new Promise((resolve, reject) => {
-      let promise = superagent.get(url)
+      let promise = superagent[method](url)
+      // if (config.headers) {
+      //   Object.keys(config.headers).forEach(key => {
+      //     promise = promise.set(key, config.headers[key])
+      //   })
+      // }
       if (config.cookie) {
         promise = promise.set('Cookie', config.cookie)
       }
       promise.end((err, res) => {
         if (err) {
+          console.log('err', err)
           reject(err)
         }
         resolve(res.headers['set-cookie'])
